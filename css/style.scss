@@ -1,0 +1,908 @@
+// =======================
+//Main Stylesheet
+//The Phone1st Styles from the developer theme
+//Swap this for your own sylesheet but use the editor and login style sheets
+// ==========================================================================
+// =======================
+// Variables
+// =======================
+
+// Typography
+$font: "Oswald", serif;
+$heading-font: $font;
+$alt-font: $font;
+$code-font: "Source Code Pro", monospace;
+
+// Font Sizes
+$font-size: 1rem; // 16px
+$lead: $font-size*1.1;
+$secondary: $font-size/1.1;
+$third: $font-size/1.2;
+
+// Line height
+$line-height: 1.6;
+
+// Other Sizes
+$radius: 5px;
+$spacer: 2rem;
+
+// Colors
+$black: #1C0301;
+$white:#FFF;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+// Font Colors
+$font-color: $dark-gray;
+$link-color: #2365c0;//blue
+$hover-color: #c80013;//red
+
+// Border
+$border: 1px solid $medium-gray;
+
+// Background Colors
+$background: $light-gray;
+$light-background: lighten($background, 11%);
+
+$input-background: #fdfdfd;
+$button-background: $link-color;
+
+$error-color: #ba221d;
+$success-color: #3f913a;
+
+// =======================
+// Mixins
+// =======================
+
+// @include background(value);
+// example @include background(lighten($red, 20%));
+@mixin background($background-color: $background) {
+  background: $background-color;
+  box-shadow: inset 0 0 4px darken($background-color, 7%);
+}
+
+@mixin clearfix() {
+&:before,
+&:after {
+content : "";
+display : table; }
+
+&:after {
+clear : both; }
+}
+
+//Hide Text
+// @include visuallyhidden;
+@mixin visuallyhidden {
+overflow : hidden;
+position : absolute;
+clip : rect(0 0 0 0);
+height : 1px;
+width : 1px;
+margin : -1px;
+padding : 0;
+border : 0;
+// Make visuallyhidden focusable with a keyboard
+
+&.focusable {
+
+&:active,
+&:focus {
+position : static;
+clip : auto;
+height : auto;
+width : auto;
+margin : 0;
+overflow: visible;
+}
+}
+}
+
+
+// =======================
+// Typography
+// =======================
+
+hr {
+  display: block;
+  margin: $spacer rem(10);
+  padding: 0;
+  height: 1px;
+  border: 0;
+  border-top: 2px solid $light-gray;
+  border-bottom: 1px solid lighten($light-gray, 40%);
+  clear: both;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: normal;
+  color: $font-color;
+  clear: both; // remember this!
+  line-height: 1.4;
+  margin-bottom: .5rem;
+  margin-top: $spacer/2;
+  hyphens: none;
+}
+
+h1 {
+  font-size: $font-size *1.9;
+}
+
+h2 {
+  font-size: $font-size * 1.7;
+}
+
+h3 {
+  font-size: $font-size *1.5;
+}
+
+h4 {
+  font-size: $font-size *1.3;
+}
+
+h5 {
+  font-size: $font-size;
+}
+
+h6 {
+  font-size: $secondary;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.1;
+  margin-bottom: .3rem;
+}
+
+p,
+ol,
+ul,
+dl {
+  margin-top: 0;
+  margin-bottom: $spacer;
+  line-height: $line-height;
+  hyphens: none;
+}
+
+strong {
+  color: darken($medium-gray, 20%);
+}
+
+address {
+  font-size: $font-size / 1.05;
+  margin-bottom: $spacer;
+  line-height: $line-height/1.2;
+}
+
+small {
+  font-size: $font-size / 1.25;
+}
+
+ul,
+ol {
+  padding: 0 0 0 1.7rem;
+
+  li {
+    margin-top: .3rem;
+}
+}
+
+ul ul,
+ol ol {
+  margin-top: .4rem;
+  font-size: $font-size / 1.05;
+  margin-bottom: 1.1rem;
+}
+
+li ul {
+  list-style-type: circle;
+  margin: .5rem 0;
+  padding-left: 1.5rem;
+}
+
+li ol {
+  margin: .5rem 0;
+}
+
+// For displaying inline list
+ul.inline {
+  list-style-type :none;
+  margin-left: 0;
+
+  & > li {
+    display: inline-block;
+    padding-right: 1.8rem;
+    font-size: $font-size / 1.05;
+}
+}
+
+blockquote {
+  margin: $spacer/2 0;
+  padding: 0 1.3rem;
+  border-left: 5px solid lighten($medium-gray, 15%);
+  font-style: italic;
+
+  p {
+    font-size: $font-size / 1.05;
+    margin-bottom: .8rem;
+}
+
+  small {
+  &:before {
+    content : '\2014 \2002';
+}
+  
+  &:after {
+    content :'';
+}
+}
+  
+  &.pull-right {
+    float: right;
+    border-left: 0 none;
+    border-right: 5px solid lighten($medium-gray, 15%);
+
+  p, small {
+  text-align: right;
+}
+
+  p {
+    margin-top: 0; // makes the line the same size as the left blockquote
+  }
+
+  p:last-child {
+    margin-bottom: 0; // makes the line the same size as the left blockquote
+  }
+
+  small {
+
+  &:before {
+    content: '';
+}
+
+  &:after {
+    content: '\2002 \2014';
+}
+}
+}
+
+  cite {
+    font-size: $font-size / 1.35;
+}
+}
+
+dl {
+  margin-bottom: $spacer/2;
+}
+
+dt {
+  margin-bottom: .25rem;
+  margin-top: .95rem;
+}
+
+dd {
+  margin-bottom: .8rem;
+  margin-left: 1.5rem;
+  font-size: $font-size / 1.15;
+}
+
+abbr[title] {
+  text-decoration: none;
+  border-bottom: 1px dotted $dark-gray;
+  cursor: help;
+}
+
+ins {
+
+}
+
+dfn {
+
+}
+
+mark {
+  
+}
+
+pre {
+  overflow: auto;
+  word-wrap: break-word;
+  white-space: pre;
+  white-space: -moz-pre-wrap; // fennec
+  white-space: pre-wrap;
+  white-space: pre\9; // IE7+
+}
+
+pre,
+code,
+kbd,
+samp {
+  font-family: $code-font;
+  font-size: $secondary;
+  line-height: $line-height;
+  margin-bottom: $spacer/2;
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+// consistant paragraphs
+.lead {
+  font-size: $lead;
+}
+
+.secondary {
+  font-size: $secondary;
+}
+
+.third {
+  font-size: $third;
+}
+
+// WELL ====================================================
+
+.well {
+  min-height: 1.25rem;
+  padding: 1.25rem;
+  @include background($light-background);
+  border-radius: $radius;
+  margin-bottom: $spacer;
+
+  p {
+    font-size: $font-size / 1.15;
+    margin-top: 0;
+    margin-bottom: $spacer/3;
+
+  &:last-child {
+    margin-bottom: 0;
+}
+}
+}
+
+// =============================
+// Images - base level - phone
+// =============================
+
+// Responsive images
+
+img {
+	margin: 0;
+	max-width: 100%;
+	height: auto;
+}
+
+// Remove the gap between audio, canvas, iframes,
+// images, videos and the bottom of their containers:
+// https://github.com/h5bp/html5-boilerplate/issues/440
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: middle;
+}
+
+img {
+	margin-top: $spacer;
+	margin-bottom: $spacer;
+}
+
+figure {
+	padding: 0;
+	text-align: center;
+	margin: $spacer $spacer*2 $spacer/2 $spacer*2;
+}
+
+figure img {
+	margin: 0 !important;
+}
+
+figcaption {
+	font-size: $secondary;
+	font-family: $alt-font;
+	line-height: 1.4;
+	color: $dark-gray;
+	margin: 0;
+	padding: .5rem 0 0 0;
+}
+
+.img-framed {
+	background-color: $white;
+	padding: 1rem;
+	border-radius: $radius;
+	border: $border;
+	box-shadow: 2px 2px 2px $light-gray; 
+}
+
+.img-circle {
+	border-radius: 50rem !important;
+}
+
+.alignleft,
+.alignright,
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// =======================
+// Forms
+// =======================
+
+form {
+  margin-bottom: $spacer/2;
+}
+
+fieldset {
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  font-weight: 700;
+  margin-bottom: $spacer / 4;
+  padding: 0;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: $spacer / 4;
+}
+
+input,
+select,
+textarea {
+  outline: 0 none;
+  display: inline-block;
+  font-family: $font;
+  font-size: $secondary;
+}
+// Add your type inputs
+[type="text"],
+[type="email"],
+[type="search"],
+textarea {
+  appearance: none;
+  background-color: $input-background;
+  border: $border;
+  border-radius: $radius;
+  box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+  margin-bottom: $spacer/2;
+  padding: $spacer / 6;
+  transition:background-color 0.8s ease-in 0.1s;
+    
+  &:hover {
+    border-color: darken($input-background, 20%);
+}
+  &:focus {
+    border-color: $link-color;
+    box-shadow: inset 0 1px 2px rgba(#000, 0.1);
+    outline: none;
+}
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  
+  &:hover {
+    border-color: $error-color;
+}
+}
+  &::placeholder {
+    color: $medium-gray;
+}
+}
+
+textarea {
+  resize: vertical;
+}
+
+[type="checkbox"],
+[type="radio"] {
+  margin-right: $spacer/4;
+}
+
+[type="file"] {
+  margin-bottom: $spacer/2;
+}
+
+select {
+  margin-bottom: $spacer/2;
+}
+
+// buttons
+%btn {
+  outline: 0 none;
+  color: $white;
+  border-radius: $radius;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $alt-font;
+  font-size: $third;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1;
+  text-align: center;
+  padding: $spacer/3;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  white-space: nowrap;
+
+  &:hover, &:focus {
+  
+}
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+  &:hover {
+    background-color: $error-color;
+}
+}
+}
+
+@mixin button-bg($bg) {
+  background: $bg;
+  
+  @media only screen and (min-width: 900px) {
+  
+  &:hover {
+    background:lighten($bg, 20%);
+    transition: all 0.3s ease;
+}
+}
+}
+
+//Add button types
+button,
+.but {
+  @extend %btn;
+  @include button-bg($button-background);
+  margin: 0;
+}
+
+// ===============================================
+// Tables
+// Adapted from: 320 and up by Stuff and Nonsense
+// ===============================================
+
+table {
+  border-collapse: collapse;
+  width: 95%;
+  margin: $spacer auto;
+  background-color: transparent;
+
+  th,
+  td {
+    padding: .7rem;
+    vertical-align: top;
+    border-top: $border;
+    font-size: $secondary;
+    line-height: 1.5;
+    color: $black;
+    text-align: left;
+}
+
+  th {
+    font-weight: bold;
+}
+
+  thead th {
+    vertical-align: bottom;
+}
+
+  tbody tr td,
+  tbody tr th {
+  //background transition see _900scss
+}
+
+  tbody tr:hover td,
+  tbody tr:hover th {
+  //background hover see _900scss
+}
+}
+
+table caption {
+  font-size: $font-size;
+  margin-top: $spacer/2;
+  margin-bottom: $spacer/2;
+}
+
+// =======================
+// Site
+// =======================
+
+.wrapper,
+header,
+article,
+footer {
+    @include clearfix;
+}
+
+.wrapper {
+	max-width: 1020px;
+	margin: 0 auto;
+  padding: 0 3%;
+}
+
+html {
+		-webkit-overflow-scrolling: touch;
+		-webkit-tap-highlight-color: $light-gray;
+		box-sizing: border-box;
+		height: 100%;
+}
+
+*,
+*::before,
+*::after {
+		box-sizing: inherit;
+}
+
+body {
+	height: 100%;
+	color: $font-color;
+	font-family: $font;
+	font-feature-settings: "kern", "liga", "pnum";
+	font-size: $font-size;
+	line-height: $line-height;
+	text-rendering: optimizeLegibility;
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+	
+	&:active,
+	&:focus,
+	&:hover {
+		color: $link-color;//take hover off at phone level
+}
+}
+//default WordPress class to hide stuff
+.screen-reader-text {
+	@include visuallyhidden;
+}
+
+.by-author,
+.posted-on,
+.cat-links,
+.tags {
+	margin-right: .5rem;
+}
+
+.by-author:before {
+	content: 'by: ';
+}
+
+.posted-on:before {
+	content: 'Posted: ';
+}
+
+.cat-links:before {
+	content: 'Category: ';
+}
+
+.tags:before {
+	content: 'Tagged: ';
+}
+
+.post,
+.sidebar,
+.footer-sidebar,
+.related-post-wrap,
+.popular-post-wrap {
+	border: $border;
+	padding: $spacer/2;
+	margin-top: $spacer;
+	margin-bottom: $spacer;
+}
+
+.author-info {
+  width: 90%;
+  margin: $spacer/2 auto;
+  border: 1px dashed $medium-gray;
+  padding: $spacer/4 $spacer/2;
+
+  h2 {
+    font-size: $font-size;
+    margin-bottom: 0;
+  }
+
+  img {
+    margin-top: $spacer/2;
+    margin-bottom: 0;
+  }
+
+  .author-description {
+  p {
+    margin-bottom: $spacer/2;
+  }
+  }
+
+}
+
+.comments-area ol,
+.main-menu ul,
+.social-navigation ul {
+  list-style: none;
+}
+
+.menu-title-remove {
+  font-size: .8rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: $medium-gray;
+}
+
+.footer-sidebar,
+.sidebar {
+  float: left;
+  width: 100%;
+}
+
+//footer and social menu have '|' separator. See menu templates php
+.footer-links li,
+.social-navigation li {
+  display: inline;
+
+  .spacer {
+    margin-left: 4px;
+    margin-right: 2px;
+
+  }
+}
+//hide the last separator
+.footer-links li:last-child span,
+.social-navigation li:last-child span {
+      display: none;
+}
+
+.nav-links {
+  @include clearfix;
+}
+
+.nav-previous,
+.nav-next {
+  max-width: 50%;
+}
+
+.nav-previous {
+  float: left;
+}
+
+.nav-next {
+  float: right;
+}
+
+//Change for icon font
+.social-navigation a[href*="facebook.com"]:before {
+  content: "Facebook";
+}
+
+.social-navigation a[href*="plus.google.com"]:before {
+  content: "Google+";
+}
+
+.social-navigation a[href*="github.com"]:before {
+  content: "Github";
+}
+
+.social-navigation a[href*="linkedin.com"]:before {
+  content: "LinkedIn";
+}
+
+.social-navigation a[href*="twitter.com"]:before {
+  content: "Twitter";
+}
+//if theres no sidebar shade the page background
+.no-sidebar {
+  background: #f6feff;
+}
+
+
+
+// =======================
+// min-width 900px
+// =======================
+
+@media only screen and (min-width: 900px) {
+
+//Links and hovers
+a {
+  transition: color 0.4s ease-in 0.1s;
+    
+  &:hover {
+    color: $hover-color;
+}
+}
+
+//Table hovers
+tbody tr td,
+tbody tr th {
+  transition: background-color 1.0s ease-in-out;
+}
+
+tbody tr:hover td,
+tbody tr:hover th {
+  background-color: $light-background;
+}
+
+// =======================
+// IMAGES
+// =======================
+
+// We start to align the images and captions
+
+.alignright {
+  float  : right;
+}
+
+.alignleft {
+  float  : left;
+}
+
+figure.alignright,
+img.alignright {
+  margin-top: 0;
+  margin-right: 0;
+  margin-left: $spacer;
+}
+
+figure.alignleft,
+img.alignleft {
+  margin-top: 0;
+  margin-right: $spacer;
+  margin-bottom: 0;
+}
+
+.footer-sidebar1,
+.footer-sidebar2,
+.footer-sidebar3,
+.sidebar div {
+  width: 33%;
+  float: left;
+  padding: 15px;
+}
+
+.related-post-wrap,
+.popular-post-wrap {
+  text-align: center;
+}
+
+.related-post,
+.popular-post {
+  width: 33%;
+  display: inline-block;
+  padding: 15px;
+}
+}//end media 900px
+
+
+
+
+
+
+
+
+
+

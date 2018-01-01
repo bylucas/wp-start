@@ -1,0 +1,39 @@
+// ========================================================
+// LOGIN STYLESHEET
+// Change the Phone1st login to your own
+// ========================================================
+
+.login {
+    h1 a {
+        background: url("../images/login-phone1st.png") no-repeat top center;
+        width: 326px;
+        height: 67px;
+        background-size: 100%;
+        padding-bottom: 0.625rem;
+    }
+    p {
+        
+    }
+    form {
+        margin-left: 0.6rem;
+        
+        box-shadow: none;
+        .input {
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            
+        }
+        .button-primary {
+            
+            text-shadow: none;
+           
+        }
+        p.submit {
+            display: inline;
+        }
+        #nav {
+            
+            
+        }
+    }
+}
