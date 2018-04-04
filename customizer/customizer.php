@@ -1,11 +1,11 @@
 <?php
 /**
- * Phone1st Customizer
+ * start Customizer
  * Sets up the WordPress core custom header and custom background features.
  * A very basic customizer to alter, destroy or build-on 
  */
 
-function phone1st_custom_header_and_background() {
+function start_custom_header_and_background() {
 
     $default_background_color = get_background_color();
 
@@ -19,14 +19,14 @@ function phone1st_custom_header_and_background() {
         'width'                  => 1200,
         'height'                 => 300,
         'flex-height'            => true,
-        'wp-head-callback'       => 'phone1st_header_style',
+        'wp-head-callback'       => 'start_header_style',
     ) );
 }
-add_action( 'after_setup_theme', 'phone1st_custom_header_and_background' );
+add_action( 'after_setup_theme', 'start_custom_header_and_background' );
 
-if ( ! function_exists( 'phone1st_header_style' ) ) :
+if ( ! function_exists( 'start_header_style' ) ) :
 
-function phone1st_header_style() {
+function start_header_style() {
 
    $header_image = get_header_image();
 
@@ -37,7 +37,7 @@ function phone1st_header_style() {
 
     // We may have a header background.
     ?>
-    <style type="text/css" id="phone1st-header-css">
+    <style type="text/css" id="start-header-css">
         <?php // Has a Custom Header been added?
         if ( ! empty( $header_image)): ?> .site-header {
             background-image: url(<?php header_image();
@@ -63,18 +63,18 @@ function phone1st_header_style() {
     </style>
     <?php
 }
-endif; // phone1st_header_style
+endif; // start_header_style
 
 
-function phone1st_sanitize_input( $input ) {
+function start_sanitize_input( $input ) {
     return strip_tags( stripslashes( $input ) );
-} // end phone1st_sanitize_input
+} // end start_sanitize_input
 
 
 /**
  * Adds postMessage support for site title, description and color scheme for the Customizer.
  */
-function phone1st_customize_register( $wp_customize ) {
+function start_customize_register( $wp_customize ) {
     
 
     $wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -84,11 +84,11 @@ function phone1st_customize_register( $wp_customize ) {
     $wp_customize->remove_control( 'header_textcolor' );
 
 }
-add_action( 'customize_register', 'phone1st_customize_register', 11 );
+add_action( 'customize_register', 'start_customize_register', 11 );
 
 
 // Call the script for live preview
-function phone1st_customize_preview_js() {
-    wp_enqueue_script( 'phone1st-customize-preview', get_template_directory_uri() . '/js/min/customize-preview-min.js', array( 'customize-preview' ), '20150922', true );
+function start_customize_preview_js() {
+    wp_enqueue_script( 'start-customize-preview', get_template_directory_uri() . '/js/min/customize-preview-min.js', array( 'customize-preview' ), '20150922', true );
 }
-add_action( 'customize_preview_init', 'phone1st_customize_preview_js' );
+add_action( 'customize_preview_init', 'start_customize_preview_js' );

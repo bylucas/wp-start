@@ -3,7 +3,7 @@
  * The template for displaying search page
  *
  * @package WordPress
- * @since Phone1st 1.0
+ * @since start 1.0
  */
 ?>
 
@@ -18,7 +18,7 @@
         <div class="search-content">
 
             <p>
-                <?php echo phone1st_excerpt(); ?>
+                <?php echo start_excerpt(); ?>
             </p>
 
         </div>

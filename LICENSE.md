@@ -1,12 +1,12 @@
 # Licence
 
-The __Phone1st__ theme is entirely __FREE__, you may do whatever you like.   
+The __start__ theme is entirely __FREE__, you may do whatever you like.   
 
 > The third party links found within the theme will have their own licence, please go to their websites for their licence information.
 
 ## The GNU License (GNU)
 
-#### Copyright (c) 2018 howardl
+#### Copyright (c) 2018 howardlucas.io
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -19,6 +19,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
   
 
-[howardl](https://howardl.uk/) - Starter Theme - for WordPress 2018
+[howardlucas.io](https://howardlucas.io/) - Starter Theme - for WordPress 2018
 
 ___

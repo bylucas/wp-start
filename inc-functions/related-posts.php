@@ -3,9 +3,9 @@
 RELATED POSTS AND POPULAR POSTS FUNCTION
 ****************************************/
 
-// Related Posts Function (call using phone1st_related_posts(); )
+// Related Posts Function (call using start_related_posts(); )
 
-function phone1st_related_posts()  {
+function start_related_posts()  {
 
     if (is_single() )  {
 
@@ -44,7 +44,7 @@ function phone1st_related_posts()  {
         </a>
         <h4><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
         <p>
-            <?php echo phone1st_excerpt(); ?>
+            <?php echo start_excerpt(); ?>
         </p>
     </div>
 
@@ -57,14 +57,14 @@ $post = $orig_post;
 wp_reset_query();
 
 }
-} /* end phone1st related posts function */
+} /* end start related posts function */
 
 
 /////////////////
 
-// Popular Posts Function (call using phone1st_popular_posts(); ) for use on pages
+// Popular Posts Function (call using start_popular_posts(); ) for use on pages
 
-function phone1st_popular_posts() {
+function start_popular_posts() {
 
     if (is_page() ) { 
     
@@ -99,5 +99,5 @@ if( $the_query->have_posts() ) {
 wp_reset_query();
 }
 
-} /* end phone1st popular posts function */
+} /* end start popular posts function */
 ?>

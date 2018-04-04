@@ -1,12 +1,12 @@
-![](https://howardl.uk/post-images/phone1st-wordpress/phone1st-wordpress-title-image.jpg)
+![](https://howardlucas.io/post-images/start-wordpress/start-wordpress-title-image.jpg)
 
-# Phone1st Starter Theme - WordPress
+# start Starter Theme - WordPress
 
 #### Version 1.0
 
 ___
 
-Phone1st is a light, simple developer theme for WordPress. The idea is to create a website design in html and when it's tested and approved turn it into a WordPress site using this very basic theme with all the WordPress elements.
+start is a light, simple developer theme for WordPress. The idea is to create a website design in html and when it's tested and approved turn it into a WordPress site using this very basic theme with all the WordPress elements.
 
 ## All set for using Scss
 
@@ -14,7 +14,7 @@ Phone1st is a light, simple developer theme for WordPress. The idea is to create
 
 ## Includes:
 
-+ Head cleanup currently turned off
++ Head cleanup
 + the usual post meta and post thumbnails
 + navigation functions
 + related and poular posts

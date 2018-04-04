@@ -6,7 +6,7 @@
  * For example, puts together date-based pages if no date.php file exists.
  *
  * @package WordPress
- * @since phone1st 1.0
+ * @since start 1.0
  */
 ?>
 
@@ -31,7 +31,7 @@
 			// End the loop.
 			endwhile;
 
-			phone1st_pagination();
+			start_pagination();
 
 		// If no content, include the "No posts found" template.
 		else :

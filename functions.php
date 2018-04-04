@@ -3,7 +3,7 @@
  * This file calls the various Function files from inc-functions/
  */
 require_once locate_template('/inc-functions/theme-support.php');
-//require_once locate_template('/inc-functions/after-setup.php');
+require_once locate_template('/inc-functions/after-setup.php');
 require_once locate_template('/inc-functions/scripts-fonts.php');
 require_once locate_template('/inc-functions/hooks.php');
 require_once locate_template('/inc-functions/related-posts.php');

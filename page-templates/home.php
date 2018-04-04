@@ -11,7 +11,7 @@
 
         <header class="page-header">
             
-            <h1>About Phone1st</h1>
+            <h1>About start</h1>
         
         </header>
         
@@ -23,7 +23,7 @@
 
             </section>
                 
-    <?php phone1st_popular_posts(); ?>
+    <?php start_popular_posts(); ?>
 
     </section>
 

@@ -9,7 +9,7 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <?php phone1st_post_thumbnail(); ?>
+        <?php start_post_thumbnail(); ?>
 
             <header class="post-header">
                 <?php the_title( '<h1>', '</h1>' ); ?>
@@ -20,7 +20,7 @@
 
                 <?php the_content(); ?>
 
-                    <?php phone1st_page_links(); ?>
+                    <?php start_page_links(); ?>
 
             </section>
             <!-- .post-content -->
@@ -31,7 +31,7 @@
             edit_post_link(
                 sprintf(
                     /* translators: %s: Name of current post */
-                    __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'phone1st' ),
+                    __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'start' ),
                     get_the_title()
                 ),
                 '<span class="edit-link">',

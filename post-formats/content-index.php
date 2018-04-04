@@ -4,7 +4,7 @@
  * Used for pages that show the excerpt.
  *
  * @package WordPress
- * @since phone1st 1.0
+ * @since start 1.0
  */
 ?>
 
@@ -12,7 +12,7 @@
 
         <?php
 		// Post thumbnail.
-		phone1st_post_thumbnail();
+		start_post_thumbnail();
 	?>
 
             <header class="index-header">
@@ -23,7 +23,7 @@
             <div class="index-content">
 
                 <p>
-                    <?php echo phone1st_excerpt(); ?>
+                    <?php echo start_excerpt(); ?>
                 </p>
 
             </div>
@@ -31,13 +31,13 @@
 
             <footer class="index-footer">
 
-                <?php phone1st_post_meta(); ?>
+                <?php start_post_meta(); ?>
 
                     <?php
             edit_post_link(
                 sprintf(
                     /* translators: %s: Name of current post */
-                    __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'phone1st' ),
+                    __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'start' ),
                     get_the_title()
                 ),
                 '<span class="edit-link">',

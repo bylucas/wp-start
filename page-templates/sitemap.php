@@ -21,14 +21,14 @@
                 <section class="sitemap-body">
 
                     <p>
-                        <?php _e('Every page, post and category is listed on this page. If you can&rsquo;t find what your looking for here please contact', 'phone1st'); ?> <a href="mailto:<?php echo get_option('admin_email'); ?>?subject=sitemap">[your email]</a>
-                            <?php _e('so that I can be of more assistance.', 'phone1st'); ?>
+                        <?php _e('Every page, post and category is listed on this page. If you can&rsquo;t find what your looking for here please contact', 'start'); ?> <a href="mailto:<?php echo get_option('admin_email'); ?>?subject=sitemap">[your email]</a>
+                            <?php _e('so that I can be of more assistance.', 'start'); ?>
                     </p>
 
 
                         <div class="sitemap-left">
 
-                            <h3><?php _e('Pages', 'phone1st'); ?></h3>
+                            <h3><?php _e('Pages', 'start'); ?></h3>
 
                             <ul>
 
@@ -37,7 +37,7 @@
                             </ul>
                             <!-- end page-ul -->
 
-                            <h3><?php _e('Archives', 'phone1st'); ?></h3>
+                            <h3><?php _e('Archives', 'start'); ?></h3>
 
                             <ul>
 
@@ -45,7 +45,7 @@
 
                             </ul>
 
-                            <h3><?php _e('Categories', 'phone1st'); ?></h3>
+                            <h3><?php _e('Categories', 'start'); ?></h3>
 
                             <ul class="page-ul">
 
@@ -60,7 +60,7 @@
 
                         <div class="sitemap-right">
 
-                            <h3><?php _e('Articles', 'phone1st'); ?></h3>
+                            <h3><?php _e('Articles', 'start'); ?></h3>
 
                             <ul>
 

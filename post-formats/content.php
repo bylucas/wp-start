@@ -5,7 +5,7 @@
  * Used for single.
  *
  * @package WordPress
- * @since Phone1st 1.0
+ * @since start 1.0
  */
 ?>
 
@@ -13,7 +13,7 @@
 
         <?php
 		// Post thumbnail.
-		phone1st_post_thumbnail();
+		start_post_thumbnail();
 	?>
 
             <header class="post-header">
@@ -26,7 +26,7 @@
 			
             the_content();
 
-		 phone1st_page_links();
+		 start_page_links();
 
 		?>
             </div>
@@ -45,13 +45,13 @@
 
                 <footer class="post-footer">
 
-                    <?php phone1st_post_meta(); ?>
+                    <?php start_post_meta(); ?>
 
                         <?php
             edit_post_link(
                 sprintf(
                     /* translators: %s: Name of current post */
-                    __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'phone1st' ),
+                    __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'start' ),
                     get_the_title()
                 ),
                 '<span class="edit-link">',

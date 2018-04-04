@@ -3,7 +3,7 @@
  * The template for displaying all single posts and attachments (post-formats)
  *
  * @package WordPress
- * @since Phone1st 1.0
+ * @since start 1.0
  */
 
 get_header(); ?>
@@ -17,9 +17,9 @@ get_header(); ?>
              */
             get_template_part( '/post-formats/content', get_post_format() );
 
-            phone1st_post_navigation();
+            start_post_navigation();
 
-            phone1st_related_posts();
+            start_related_posts();
 
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) :

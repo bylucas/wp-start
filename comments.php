@@ -6,7 +6,7 @@
  * and the comment form.
  *
  * @package WordPress
- * @since Phone1st 1.0
+ * @since start 1.0
  */
 
 /*
@@ -27,7 +27,7 @@ if ( post_password_required() ) {
 				$comments_number = get_comments_number();
 				if ( 1 === $comments_number ) {
 					/* translators: %s: post title */
-					printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'phone1st' ), get_the_title() );
+					printf( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'start' ), get_the_title() );
 				} else {
 					printf(
 						/* translators: 1: number of comments, 2: post title */
@@ -36,7 +36,7 @@ if ( post_password_required() ) {
 							'%1$s thoughts on &ldquo;%2$s&rdquo;',
 							$comments_number,
 							'comments title',
-							'phone1st'
+							'start'
 						),
 						number_format_i18n( $comments_number ),
 						get_the_title()
@@ -45,7 +45,7 @@ if ( post_password_required() ) {
 			?>
 		</h2>
 
-            <?php phone1st_comment_nav(); ?>
+            <?php start_comment_nav(); ?>
 
                 <ol class="comment-list">
                     <?php
@@ -58,7 +58,7 @@ if ( post_password_required() ) {
                 </ol>
                 <!-- .comment-list -->
 
-                <?php phone1st_comment_nav(); ?>
+                <?php start_comment_nav(); ?>
 
                     <?php endif; // Check for have_comments(). ?>
 
@@ -67,7 +67,7 @@ if ( post_password_required() ) {
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
                             <p class="no-comments">
-                                <?php _e( 'Comments are closed.', 'phone1st' ); ?>
+                                <?php _e( 'Comments are closed.', 'start' ); ?>
                             </p>
                             <?php endif; ?>
 

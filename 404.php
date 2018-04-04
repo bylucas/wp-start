@@ -5,7 +5,7 @@
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
  * @package WordPress
- * @subpackage Phone1st
+ * @subpackage start
  * @since 1.0
  * @version 1.0
  */
@@ -16,8 +16,8 @@ get_header(); ?>
 
         <header class="post-not-found-header">
 
-            <h1><span><?php _e( 'Oops!', 'phone1st' ); ?></span><br>
-				<?php _e( 'That page can&rsquo;t be found', 'phone1st' ); ?>
+            <h1><span><?php _e( 'Oops!', 'start' ); ?></span><br>
+				<?php _e( 'That page can&rsquo;t be found', 'start' ); ?>
 			</h1>
 
         </header>
@@ -25,7 +25,7 @@ get_header(); ?>
         <section class="post-not-found-body">
 
             <p>
-                <?php _e( 'Apologies, but no results were found. Perhaps another search will help or see the latest Articles below...', 'phone1st' ); ?>
+                <?php _e( 'Apologies, but no results were found. Perhaps another search will help or see the latest Articles below...', 'start' ); ?>
             </p>
 
             <div class="noresults-search-box">
@@ -34,7 +34,7 @@ get_header(); ?>
 
             </div>
 
-            <h3><?php _e('Check out the latest articles', 'phone1st'); ?></h3>
+            <h3><?php _e('Check out the latest articles', 'start'); ?></h3>
 
             <ul>
 

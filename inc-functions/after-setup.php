@@ -4,10 +4,10 @@ AFTER THEME SETUP - Remove un-wanted files from WordPress
 ********************************************************************************************
 *
 * WordPress adds some unnecessary files to the head and unnecessary <p> tags to the post body.
-* @since Phone1st 1.0
+* @since start 1.0
 */
  
-function phone1st_after_setup () {
+function start_after_setup () {
   
     // removes the “generator” meta tag from the document header.
     remove_action('wp_head', 'wp_generator');
@@ -36,44 +36,44 @@ function phone1st_after_setup () {
     remove_action( 'wp_print_styles', 'print_emoji_styles' );
 
 // remove WP version from scripts and styles
-function phone1st_remove_wp_ver_css_js( $src ) {
+function start_remove_wp_ver_css_js( $src ) {
     if ( strpos( $src, 'ver=' ) )
         $src = remove_query_arg( 'ver', $src );
     return $src;
 }
 
-    add_filter( 'style_loader_src', 'phone1st_remove_wp_ver_css_js', 9999 );
+    add_filter( 'style_loader_src', 'start_remove_wp_ver_css_js', 9999 );
     
-    add_filter( 'script_loader_src', 'phone1st_remove_wp_ver_css_js', 9999 );
+    add_filter( 'script_loader_src', 'start_remove_wp_ver_css_js', 9999 );
 
 // remove injected CSS for recent comments widget
-function phone1st_remove_wp_widget_recent_comments_style() {
+function start_remove_wp_widget_recent_comments_style() {
     if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
         remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
     }
 }
 
-add_filter( 'wp_head', 'phone1st_remove_wp_widget_recent_comments_style', 1 );
+add_filter( 'wp_head', 'start_remove_wp_widget_recent_comments_style', 1 );
 
 // clean up comment styles in the head
-function phone1st_remove_recent_comments_style() {
+function start_remove_recent_comments_style() {
     global $wp_widget_factory;
     if (isset($wp_widget_factory->widgets['WP_Widget_Recent_Comments'])) {
         remove_action( 'wp_head', array($wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style') );
     }
 }
 
-add_action('wp_head', 'phone1st_remove_recent_comments_style', 1);
+add_action('wp_head', 'start_remove_recent_comments_style', 1);
 
 }
 
 // Media cleanup
   
   // clean up gallery output in wp
-  function phone1st_gallery_style($css) {
+  function start_gallery_style($css) {
   return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
 }
-  add_filter('gallery_style', 'phone1st_gallery_style');
+  add_filter('gallery_style', 'start_gallery_style');
 
 
   // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
@@ -86,7 +86,7 @@ add_filter('the_content', 'filter_ptags_on_images');
 
 // For some reason WordPress adds explicit width to the figure tag. That inhibits our responsive layout and the only way around that is to rewrite the entire img_caption_shortcode function.
   
-  function phone1st_img_caption_shortcode ( $empty, $attr, $content ) {
+  function start_img_caption_shortcode ( $empty, $attr, $content ) {
     $attr = shortcode_atts( array(
         'id'      => '',
         'align'   => 'alignnone',
@@ -111,7 +111,7 @@ add_filter('the_content', 'filter_ptags_on_images');
         . '</figure>';
 }
 
-  add_filter( 'img_caption_shortcode', 'phone1st_img_caption_shortcode', 10, 3 );
+  add_filter( 'img_caption_shortcode', 'start_img_caption_shortcode', 10, 3 );
 
-add_action('after_setup_theme', 'phone1st_after_setup');
+add_action('after_setup_theme', 'start_after_setup');
 ?>

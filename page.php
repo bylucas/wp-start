@@ -5,7 +5,7 @@
  * This is the template that displays all pages by default.
  *
  * @package WordPress
- * @since Phone1st 1.0
+ * @since start 1.0
  */
 
 get_header(); ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 
 			get_template_part( 'post-formats/content', 'page' );
 
-			phone1st_popular_posts();
+			start_popular_posts();
 
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();

@@ -14,7 +14,7 @@
     <div class="wrapper">
 
         <a class="skip-link screen-reader-text" href="#content">
-            <?php _e( 'Skip to content', 'phone1st' ); ?>
+            <?php _e( 'Skip to content', 'start' ); ?>
         </a>
 
         <header id="masthead" class="site-header" role="banner">

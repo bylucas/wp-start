@@ -1,4 +1,4 @@
-=== Phone1st ===
+=== start ===
 Contributors: howardl
 Tags: light, two-columns, right-sidebar, responsive-layout, featured-images, post-formats, threaded-comments
 Requires at least: 3.0.0

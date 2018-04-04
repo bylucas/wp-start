@@ -7,7 +7,7 @@
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
  *
  * @package WordPress
- * @since Phone1st 1.0
+ * @since start 1.0
  */
 
 get_header(); ?>
@@ -25,7 +25,7 @@ get_header(); ?>
 			// End the loop.
 			endwhile;
 
-			phone1st_pagination();
+			start_pagination();
 
 		// If no content, include the "No posts found" template.
 		else :

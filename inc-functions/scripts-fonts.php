@@ -17,11 +17,11 @@ add_action('wp_enqueue_scripts', 'google_fonts');
 
 /*********** Scripts and styles *****************/
 
-  function phone1st_scripts_and_styles() {
+  function start_scripts_and_styles() {
             
 
 // Theme stylesheet. In the root.
-    wp_enqueue_style( 'phone1st-style', get_template_directory_uri() . '/css/style.css', array());
+    wp_enqueue_style( 'start-style', get_template_directory_uri() . '/css/style.css', array());
 
 
 
@@ -30,19 +30,19 @@ add_action('wp_enqueue_scripts', 'google_fonts');
       wp_enqueue_script( 'comment-reply' );
     }
 
-    wp_enqueue_script( 'phone1st-js', get_template_directory_uri() . '/js/min/scripts-min.js', array( 'jquery' ), '', true );
+    wp_enqueue_script( 'start-js', get_template_directory_uri() . '/js/min/scripts-min.js', array( 'jquery' ), '', true );
 
 
 // enqueue the highlight code style and script if is single page
   if ( is_single() ) {
 
-    wp_enqueue_style( 'phone1st-highlightcode-stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/github.min.css', array(), '' );
+    wp_enqueue_style( 'start-highlightcode-stylesheet', 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.2.0/styles/github.min.css', array(), '' );
 
-    wp_enqueue_script( 'phone1st-highlightcode', 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js', array('jquery'), '9.1.0', true );
+    wp_enqueue_script( 'start-highlightcode', 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.1.0/highlight.min.js', array('jquery'), '9.1.0', true );
 }
 }
 
-    add_action('wp_enqueue_scripts', 'phone1st_scripts_and_styles');
+    add_action('wp_enqueue_scripts', 'start_scripts_and_styles');
 
 
 

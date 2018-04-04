@@ -5,7 +5,7 @@ THEME SUPPORT
 
 
 // Adding WP Functions & Theme Support
-	function phone1st_theme_support() {
+	function start_theme_support() {
 
 // Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -20,9 +20,9 @@ THEME SUPPORT
 // Allow editor style.
   	add_editor_style( 'css/editor-style.css' );
 
-// Makes phone1st available for translation.
+// Makes start available for translation.
 // Translations can be added to the /languages/ directory.
-	load_theme_textdomain( 'phone1st', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'start', get_template_directory() . '/languages' );
 
 /*
 * Enable support for Post Thumbnails on posts and pages.
@@ -55,22 +55,22 @@ THEME SUPPORT
 
 // This theme uses wp_nav_menu() in three locations.
 	register_nav_menus( array(
-		'primary' => __( 'Primary Menu', 'phone1st' ),
-		'social'  => __( 'Social Links Menu', 'phone1st' ),
-		'footer-links' => __( 'Footer Menu', 'phone1st' )
+		'primary' => __( 'Primary Menu', 'start' ),
+		'social'  => __( 'Social Links Menu', 'start' ),
+		'footer-links' => __( 'Footer Menu', 'start' )
 	) );
 
 /**
  * Display descriptions in main navigation.
  */
-function phone1st_nav_description( $item_output, $item, $depth, $args ) {
+function start_nav_description( $item_output, $item, $depth, $args ) {
 	if ( 'primary' == $args->theme_location && $item->description ) {
 		$item_output = str_replace( $args->link_after . '</a>', '<div class="menu-item-description">' . $item->description . '</div>' . $args->link_after . '</a>', $item_output );
 	}
 
 	return $item_output;
 }
-add_filter( 'walker_nav_menu_start_el', 'phone1st_nav_description', 10, 4 );
+add_filter( 'walker_nav_menu_start_el', 'start_nav_description', 10, 4 );
 
 
 /*********************
@@ -84,17 +84,17 @@ OTHER ITEMS
 
 // Add a `screen-reader-text` class to the search form's submit button.
 
-function phone1st_search_form_modify( $html ) {
+function start_search_form_modify( $html ) {
 	return str_replace( 'class="search-submit"', 'class="search-submit screen-reader-text"', $html );
 }
-add_filter( 'get_search_form', 'phone1st_search_form_modify' );
+add_filter( 'get_search_form', 'start_search_form_modify' );
 
 // Remove the URL from the comment form
-function phone1st_disable_comment_url($fields) { 
+function start_disable_comment_url($fields) { 
 //     unset($fields['url']);
 //     return $fields;
  }
-add_filter('comment_form_default_fields','phone1st_disable_comment_url');
+add_filter('comment_form_default_fields','start_disable_comment_url');
 
 //Enable support for custom logo.
 	add_theme_support( 'custom-logo', array(
@@ -105,18 +105,18 @@ add_filter('comment_form_default_fields','phone1st_disable_comment_url');
 
 // Many times you don’t need the medium or the large size and even the thumbnail if you set your own size, so to prevent a cluttered image folder we could instruct WP to ignore them.
 	
-	function phone1st_remove_default_image_sizes( $sizes) {
+	function start_remove_default_image_sizes( $sizes) {
     // unset( $sizes['thumbnail']);
     // unset( $sizes['medium']);
     // unset( $sizes['large']);
      
     return $sizes;
 }
-add_filter('intermediate_image_sizes_advanced', 'phone1st_remove_default_image_sizes');
+add_filter('intermediate_image_sizes_advanced', 'start_remove_default_image_sizes');
 
-} //phone1st_theme_support
+} //start_theme_support
 
-add_action( 'after_setup_theme', 'phone1st_theme_support' );
+add_action( 'after_setup_theme', 'start_theme_support' );
 
 
 /************* AFTER THEME SUPPORT *****************/
@@ -124,7 +124,7 @@ add_action( 'after_setup_theme', 'phone1st_theme_support' );
 /************* BODY CLASSES *****************/
 
 // Add classes to the body to add more control
-function phone1st_body_classes( $classes ) {
+function start_body_classes( $classes ) {
 	
 	// Adds a class of no-sidebar to sites without active sidebar
 	// if theres no sidebar shade the page background
@@ -135,24 +135,24 @@ function phone1st_body_classes( $classes ) {
 	return $classes;
 }
 
-add_filter( 'body_class', 'phone1st_body_classes' );
+add_filter( 'body_class', 'start_body_classes' );
 
 
 /************* CUSTOM LOGIN PAGE *****************/
 
 // Customise the log-in page
 
-function phone1st_login_css() {
-	wp_enqueue_style( 'phone1st_login_css', get_template_directory_uri() . '/css/login.css', false );
+function start_login_css() {
+	wp_enqueue_style( 'start_login_css', get_template_directory_uri() . '/css/login.css', false );
 }
 
 // changing the logo link from wordpress.org to your site
-function phone1st_login_url() {  return home_url(); }
+function start_login_url() {  return home_url(); }
 
 // changing the alt text on the logo to show your site name
-function phone1st_login_title() { return get_option('blogname'); }
+function start_login_title() { return get_option('blogname'); }
 
 // calling it only on the login page
-add_action( 'login_enqueue_scripts', 'phone1st_login_css', 10 );
-add_filter('login_headerurl', 'phone1st_login_url');
-add_filter('login_headertitle', 'phone1st_login_title');
+add_action( 'login_enqueue_scripts', 'start_login_css', 10 );
+add_filter('login_headerurl', 'start_login_url');
+add_filter('login_headertitle', 'start_login_title');
