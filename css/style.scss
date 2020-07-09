@@ -2,19 +2,19 @@
 //Main Stylesheet
 //The Phone1st Styles from the developer theme
 //Swap this for your own sylesheet but use the editor and login style sheets
-// ==========================================================================
+// ============================================================
 // =======================
 // Variables
 // =======================
 
 // Typography
-$font: "Oswald", serif;
+$font: "raleway", sans-serif;
 $heading-font: $font;
 $alt-font: $font;
 $code-font: "Source Code Pro", monospace;
 
 // Font Sizes
-$font-size: 1rem; // 16px
+$font-size: 1.2rem;
 $lead: $font-size*1.1;
 $secondary: $font-size/1.1;
 $third: $font-size/1.2;
@@ -97,6 +97,34 @@ margin : 0;
 overflow: visible;
 }
 }
+}
+
+// Simple breakpoints - base styles are phone first
+// eg @include media(500)
+@mixin media($point) {
+  @if $point==900 {
+    @media only screen and (min-width: 900px) {
+      @content;
+    }
+  }
+
+  @else if $point==700 {
+    @media only screen and (min-width: 700px) {
+      @content;
+    }
+  }
+
+  @else if $point==500 {
+    @media only screen and (min-width: 500px) {
+      @content;
+    }
+  }
+
+  @else if $point==$point {
+    @media only screen and (min-width: $point + px) {
+      @content;
+    }
+  }
 }
 
 
@@ -464,7 +492,6 @@ legend {
 
 label {
   display: block;
-  font-weight: 700;
   margin-bottom: $spacer / 4;
 }
 
@@ -472,7 +499,7 @@ input,
 select,
 textarea {
   outline: 0 none;
-  display: inline-block;
+  display: block;
   font-family: $font;
   font-size: $secondary;
 }
@@ -688,6 +715,7 @@ a {
 .cat-links,
 .tags {
 	margin-right: .5rem;
+  font-size: $third;
 }
 
 .by-author:before {
@@ -741,10 +769,12 @@ a {
 
 }
 
-.comments-area ol,
-.main-menu ul,
-.social-navigation ul {
-  list-style: none;
+.comment-respond [type="checkbox"] {
+  display: inline-block;
+}
+
+.comment-respond label {
+  display: inline;
 }
 
 .menu-title-remove {
@@ -814,7 +844,7 @@ a {
 .social-navigation a[href*="twitter.com"]:before {
   content: "Twitter";
 }
-//if theres no sidebar shade the page background
+//if theres no sidebar (check), shade the page background
 .no-sidebar {
   background: #f6feff;
 }
@@ -825,7 +855,7 @@ a {
 // min-width 900px
 // =======================
 
-@media only screen and (min-width: 900px) {
+@include media(900) {
 
 //Links and hovers
 a {

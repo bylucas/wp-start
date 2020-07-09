@@ -1,10 +1,9 @@
 <?php
+//POSTMETA - TAGS - POST THUMBNAIL - EXCERPT
 
-/*************************************************************
-POSTMETA - TAGS - POST THUMBNAIL - EXCERPT
-*************************************************************/
+//Check for updated versions of meta
 
-/************* POST META *****************/
+/////////// POST META
 
 
   if ( ! function_exists( 'start_post_meta' ) ) :
@@ -15,20 +14,26 @@ POSTMETA - TAGS - POST THUMBNAIL - EXCERPT
 function start_post_meta() {
   if ( is_sticky() && is_home() && ! is_paged() ) {
     printf( '<span class="feature">%s</span>', __( 'Featured', 'start' ) );
-  }
+  } 
+
+  //author avatar ?>
+  <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="author"><span><?php $author_bio_avatar_size = apply_filters( 'phone1st_author_bio_avatar_size', 48 ); echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size ); ?></span></a>
  
-     printf( '<span class="by-author"><span class="screen-reader-text">%1$s </span><a class="url" href="%2$s">%3$s</a></span>',
+ <?php //by author
+   printf( '<span class="by-author"><span class="screen-reader-text">%1$s </span><a class="url" href="%2$s">%3$s</a></span>',
         _x( 'Author', 'Used before post author name.', 'start' ),
         esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
         get_the_author()
       );
 
+     //check the_modified_date('j F Y');
      printf( '<span class="posted-on"><span class="screen-reader-text">%1$s </span><a href="%2$s" rel="bookmark">%3$s</a></span>',
       _x( 'Posted on', 'Used before publish date.', 'start' ),
       esc_url( get_permalink() ),
       get_the_date()
     );
 
+     //categories
     $categories_list = get_the_category_list( _x( ' | ', 'Used between list items, there is a space after the bar.', 'start' ) );
     if ( $categories_list ) {
       printf( '<span class="cat-links"><span class="screen-reader-text">%1$s </span>%2$s</span>',
@@ -37,6 +42,7 @@ function start_post_meta() {
       );
     }
 
+    //tags
     $tags_list = get_the_tag_list( '', _x( ' | ', 'Used between list items, there is a space after the bar.', 'start' ) );
     if ( $tags_list ) {
       printf( '<span class="tags"><span class="screen-reader-text">%1$s </span>%2$s</span>',
@@ -44,6 +50,8 @@ function start_post_meta() {
         $tags_list
       );
     }
+
+    //comment-count
 
   if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
     echo '<span class="comments-link">';

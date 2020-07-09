@@ -40,7 +40,12 @@ function start_related_posts()  {
 
     <div class="related-post">
         <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
-            <?php the_post_thumbnail('related'); ?>
+            <?php if ( has_post_thumbnail() ) { ?>
+                <?php the_post_thumbnail(); ?>
+                 <?php } else { ?>
+                 <img src="<?php echo get_header_image(); ?>">
+               
+            <?php } ?>
         </a>
         <h4><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
         <p>
@@ -88,7 +93,12 @@ if( $the_query->have_posts() ) {
 
         <div class="popular-post">
             <a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>">
-                <?php the_post_thumbnail('related'); ?>
+                <?php if ( has_post_thumbnail() ) { ?>
+                <?php the_post_thumbnail(); ?>
+                 <?php } else { ?>
+                 <img src="<?php echo get_header_image(); ?>">
+               
+            <?php } ?>
             </a>
             <h4><a href="<?php the_permalink() ?>" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h4>
         </div>

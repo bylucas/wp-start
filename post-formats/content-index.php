@@ -33,6 +33,8 @@
 
                 <?php start_post_meta(); ?>
 
+                <p class="reading-time"><?php printf( __( 'Reading time about <span class="reading-number">%s</span>', 'start' ), start_estimated_reading_time() )?></p>
+
                     <?php
             edit_post_link(
                 sprintf(

@@ -1,9 +1,8 @@
 <?php
-/*******************************************************************************************
+/********************************************************
 AFTER THEME SETUP - Remove un-wanted files from WordPress
-********************************************************************************************
-*
-* WordPress adds some unnecessary files to the head and unnecessary <p> tags to the post body.
+*********************************************************
+* WordPress adds some unnecessary files to the head and unnecessary.
 * @since start 1.0
 */
  
@@ -66,52 +65,3 @@ function start_remove_recent_comments_style() {
 add_action('wp_head', 'start_remove_recent_comments_style', 1);
 
 }
-
-// Media cleanup
-  
-  // clean up gallery output in wp
-  function start_gallery_style($css) {
-  return preg_replace("!<style type='text/css'>(.*?)</style>!s", '', $css);
-}
-  add_filter('gallery_style', 'start_gallery_style');
-
-
-  // remove the p from around imgs (http://css-tricks.com/snippets/wordpress/remove-paragraph-tags-from-around-images/)
-
-function filter_ptags_on_images($content){
-   return preg_replace('/<p>\s*(<a .*>)?\s*(<img .* \/>)\s*(<\/a>)?\s*<\/p>/iU', '\1\2\3', $content);
-}
-
-add_filter('the_content', 'filter_ptags_on_images');
-
-// For some reason WordPress adds explicit width to the figure tag. That inhibits our responsive layout and the only way around that is to rewrite the entire img_caption_shortcode function.
-  
-  function start_img_caption_shortcode ( $empty, $attr, $content ) {
-    $attr = shortcode_atts( array(
-        'id'      => '',
-        'align'   => 'alignnone',
-        'width'   => '',
-        'caption' => '',
-        'class'   => ''
-    ), $attr, 'caption' );
-
-    if ( 1 > (int)$attr['width'] || empty( $attr['caption'] ) ) {
-        return $content;
-    }
-
-    if ( $attr['id'] ) {
-        $attr['id'] = 'id="' . esc_attr( $attr['id'] ) . '"';
-    }
-
-    $attr['class'] = 'class="' . esc_attr( trim( $attr['align'] . ' ' . $attr['class'] ) ) . '"';
-
-    return '<figure ' . $attr['id'] . ' ' . $attr['class'] . '>'
-        . do_shortcode( $content )
-        . '<figcaption>' . $attr['caption'] . '</figcaption>'
-        . '</figure>';
-}
-
-  add_filter( 'img_caption_shortcode', 'start_img_caption_shortcode', 10, 3 );
-
-add_action('after_setup_theme', 'start_after_setup');
-?>

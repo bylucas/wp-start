@@ -91,8 +91,8 @@ add_filter( 'get_search_form', 'start_search_form_modify' );
 
 // Remove the URL from the comment form
 function start_disable_comment_url($fields) { 
-//     unset($fields['url']);
-//     return $fields;
+    unset($fields['url']);
+    return $fields;
  }
 add_filter('comment_form_default_fields','start_disable_comment_url');
 
@@ -113,6 +113,20 @@ add_filter('comment_form_default_fields','start_disable_comment_url');
     return $sizes;
 }
 add_filter('intermediate_image_sizes_advanced', 'start_remove_default_image_sizes');
+
+//WordPress 5 items
+// Add theme support for selective refresh for widgets.
+		add_theme_support( 'customize-selective-refresh-widgets' );
+
+		// Add support for Block Styles
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embedded content
+		add_theme_support( 'responsive-embeds' );
+
 
 } //start_theme_support
 
@@ -136,6 +150,43 @@ function start_body_classes( $classes ) {
 }
 
 add_filter( 'body_class', 'start_body_classes' );
+
+//estimated reading time
+function start_estimated_reading_time() {
+
+  $post = get_post();
+
+  $words = str_word_count( strip_tags( $post->post_content ) );
+  $minutes = floor( $words / 170 );
+  $seconds = floor( $words % 170 / ( 170 / 60 ) );
+
+  if ( 1 <= $minutes ) {
+    $estimated_time = sprintf( _n( '%d minute', '%d minutes', $minutes, 'start' ), $minutes );
+  } else {
+    $estimated_time = sprintf( _n( '%d second', '%d seconds', $seconds, 'start' ), $seconds );
+  }
+
+  $word_count = sprintf( _n( ' (%d word)', ' (%d words)', $words, 'start' ), $words  );
+ 
+ return $estimated_time . $word_count;
+
+
+}
+
+//the cookie consent in the comments
+
+function start_filter_comment_fields( $fields ) {
+    $commenter = wp_get_current_commenter();
+
+    $consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
+
+    $fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' . '<label for="wp-comment-cookies-consent">Save my name and email in this browser, I may come back.</label></p>';
+
+    return $fields;
+}
+
+add_filter( 'comment_form_default_fields', 'start_filter_comment_fields', 20 );
+
 
 
 /************* CUSTOM LOGIN PAGE *****************/

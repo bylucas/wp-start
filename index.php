@@ -13,7 +13,8 @@
 get_header(); ?>
 
         <?php if ( have_posts() ) : ?>
-
+  <!-- post-feed wraps post excepts and uses infinite scroll     -->  	
+<div class="post-feed">
             <?php
 			// Start the loop.
 			while ( have_posts() ) : the_post();
@@ -23,8 +24,10 @@ get_header(); ?>
 				get_template_part( 'post-formats/content', 'index' );
 
 			// End the loop.
-			endwhile;
+			endwhile; ?>
+</div><!-- end post-feed -->
 
+<?php
 			start_pagination();
 
 		// If no content, include the "No posts found" template.

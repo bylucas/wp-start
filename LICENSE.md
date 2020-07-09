@@ -6,7 +6,7 @@ The __start__ theme is entirely __FREE__, you may do whatever you like.
 
 ## The GNU License (GNU)
 
-#### Copyright (c) 2018 howardlucas.io
+#### Copyright (c) 2020 bylucas
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -19,6 +19,6 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
   
 
-[howardlucas.io](https://howardlucas.io/) - Starter Theme - for WordPress 2018
+[howardl](https://howardl.co.uk/) - Starter Theme - for WordPress 2020
 
 ___
