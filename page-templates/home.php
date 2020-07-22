@@ -9,22 +9,25 @@
 
     <?php get_header(); ?>
 
-    <article class="post">
-        <header class="page-header">
-            
-            <h1>Home Page</h1>
-        
-        </header>
+     <?php while ( have_posts() ) : the_post(); ?>
+
+            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+                <header class="page-header">
+                    <?php the_title( '<h1>', '</h1>' ); ?>
+                </header>
+                <!-- .post-header -->
         
 
-            <section class="post-content">
+            <section class="home-page-content">
 
-    <p>Welcome to your homepage</p>         
+    <p>Welcome to your homepage.</p>         
            
            	
 
  </section>
-  </article>              
+  </article>
+   <?php endwhile; ?>          
     <?php start_popular_posts(); ?>
 
     </section>

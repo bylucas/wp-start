@@ -3,7 +3,6 @@
 THEME SUPPORT
 *********************/
 
-
 // Adding WP Functions & Theme Support
 	function start_theme_support() {
 
@@ -132,20 +131,16 @@ add_filter('intermediate_image_sizes_advanced', 'start_remove_default_image_size
 
 add_action( 'after_setup_theme', 'start_theme_support' );
 
-
-/************* AFTER THEME SUPPORT *****************/
-
-/************* BODY CLASSES *****************/
+////////////////////////////////////////////////////////
 
 // Add classes to the body to add more control
 function start_body_classes( $classes ) {
 	
-	// Adds a class of no-sidebar to sites without active sidebar
-	// if theres no sidebar shade the page background
+// if the page is using a page-template color the background
+	if (  is_page_template() ) {
+		$classes[] = 'change-color';
+	}
 
- if (is_page() && !is_active_sidebar("") ) { 
-	$classes[] = 'no-sidebar';
-}
 	return $classes;
 }
 
@@ -169,8 +164,6 @@ function start_estimated_reading_time() {
   $word_count = sprintf( _n( ' (%d word)', ' (%d words)', $words, 'start' ), $words  );
  
  return $estimated_time . $word_count;
-
-
 }
 
 //the cookie consent in the comments
@@ -187,9 +180,6 @@ function start_filter_comment_fields( $fields ) {
 
 add_filter( 'comment_form_default_fields', 'start_filter_comment_fields', 20 );
 
-
-
-/************* CUSTOM LOGIN PAGE *****************/
 
 // Customise the log-in page
 
