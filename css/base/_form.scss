@@ -1,0 +1,95 @@
+// =======================
+// Forms
+// =======================
+
+input,
+select,
+textarea {
+  outline: 0 none;
+  font-family: $font;
+  font-size: $secondary;
+}
+// Add your type inputs - Bourbon Mixin
+#{$all-text-inputs} {
+  background-color: $input-background;
+  border: $border;
+  border-radius: $radius;
+  box-shadow: inset 0 1px 3px rgba(#000, 0.06);
+  transition:background-color 0.8s ease-in 0.1s;
+    
+  &:hover {
+    border-color: darken($input-background, 20%);
+}
+  &:focus {
+    border-color: $link-color;
+    box-shadow: inset 0 1px 2px rgba(#000, 0.1);
+    outline: none;
+}
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+  
+  &:hover {
+    border-color: $error-color;
+}
+}
+  @include placeholder {
+    color: $medium-gray;
+}
+}
+
+textarea {
+  resize: vertical;
+}
+
+/////////////////////
+
+// buttons
+%btn {
+  outline: 0 none;
+  color: $white;
+  border-radius: $radius;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $alt-font;
+  font-size: $third;
+  -webkit-font-smoothing: antialiased;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  user-select: none;
+  white-space: nowrap;
+
+  &:hover, &:focus {
+  
+}
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+  &:hover {
+    background-color: $error-color;
+}
+}
+}
+
+@mixin button-bg($bg) {
+  background: $bg;
+  
+  @include media(900) {
+  
+  &:hover {
+    background:lighten($bg, 20%);
+    transition: all 0.3s ease;
+}
+}
+}
+
+//Add button types
+button,
+.but,
+.submit {
+  @extend %btn;
+  @include button-bg($button-background);
+}

@@ -9,20 +9,22 @@
 
     <?php get_header(); ?>
 
+    <article class="post">
         <header class="page-header">
             
-            <h1>About start</h1>
+            <h1>Home Page</h1>
         
         </header>
         
 
             <section class="post-content">
 
-                        
-                        <p>Your home page starts here</p>
+    <p>Welcome to your homepage</p>         
+           
+           	
 
-            </section>
-                
+ </section>
+  </article>              
     <?php start_popular_posts(); ?>
 
     </section>

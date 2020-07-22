@@ -32,7 +32,10 @@ function start_related_posts()  {
     if( $my_query->have_posts() ) {
         
         echo '<div class="related-post-wrap">';
+
         echo '<h3>You may also like ...</h3>';
+
+        echo '<div class="related-wrap">';
     
     while( $my_query->have_posts() ) {
 
@@ -55,6 +58,7 @@ function start_related_posts()  {
 
     <?php
 }
+echo '</div>';
 echo '</div>';
 }
 }
@@ -88,6 +92,8 @@ if( $the_query->have_posts() ) {
 
     echo '<h3>Popular...</h3>';
 
+    echo '<div class="popular-wrap">';
+
     while ( $the_query->have_posts() ) {
         $the_query->the_post(); ?>
 
@@ -104,6 +110,7 @@ if( $the_query->have_posts() ) {
         </div>
         <?php
 }
+    echo '</div>';
     echo '</div>';
 }
 wp_reset_query();

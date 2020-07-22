@@ -1,0 +1,60 @@
+// =============================
+// Images - base level - phone
+// =============================
+
+
+figure {
+	text-align: center;
+}
+
+figure img {
+	margin: 0 !important;
+}
+
+figcaption {
+	font-size: $secondary;
+	font-family: $alt-font;
+	line-height: 1.4;
+	color: $dark-gray;
+}
+
+.img-framed {
+	background-color: $white;
+	padding: 1rem;
+	border-radius: $radius;
+	border: $border;
+	box-shadow: 2px 2px 2px $light-gray; 
+}
+
+.img-circle {
+	border-radius: 50rem !important;
+}
+
+.alignleft,
+.alignright,
+.aligncenter {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+// We start to align the images and captions
+@include media(900) {
+.alignright {
+  	float  : right;
+}
+
+.alignleft {
+  	float  : left;
+}
+
+figure.alignright,
+img.alignright {
+  	margin: 0 0 0 $spacer;
+}
+
+figure.alignleft,
+img.alignleft {
+  margin: 0 $spacer 0 0;
+}
+}

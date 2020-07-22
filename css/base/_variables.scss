@@ -1,0 +1,52 @@
+// =======================
+// Variables
+// =======================
+
+// TYPOGRAPHY ============================
+$font: "Raleway", sans-serif;
+$heading-font: "antonio", sans-serif;
+$alt-font: "Ubuntu Condensed", sans-serif;
+$code-font: "Source Code Pro", monospace;
+$icon-font: "";
+
+$font-size: 1.2rem;
+
+$lead: $font-size*1.134;
+$secondary: $font-size/1.125;
+$third: $font-size/1.255;
+
+// SIZE ==================================
+$radius: 5px;
+//set a consistant margin
+$spacer: 2rem;
+
+// COLOR =================================
+$black: #1C0301;
+$white:#FFF;
+$dark-gray: #464747;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+// Font Colors
+$font-color: $dark-gray;
+$link-color: #2365c0;//blue
+$hover-color: lighten($link-color, 25%);
+
+// Background Colors
+$background: $light-gray;
+$light-background: lighten($background, 11%);
+
+// Form Colors
+$input-background: #fdfdfd;
+$button-background: $link-color;
+
+$error-color: #ba221d;
+$alert-color: #BD912F;
+$success-color: #3f913a;
+
+// ELEMENTS ===============================
+// Border
+$border: 1px solid $medium-gray;
+
+
+

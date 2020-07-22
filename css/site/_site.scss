@@ -1,0 +1,220 @@
+// ======================================
+// Site
+// This page is basic formatting
+// for showing example of the theme
+// After formatting the .scss files in the basic folder
+// start building your site on this page
+// ======================================
+
+.wrapper,
+header,
+article,
+footer {
+ @include clearfix;
+}
+
+.wrapper {
+ display: flex;
+ flex-direction: column;
+ flex-wrap: nowrap;
+ justify-content: center;
+ align-items: center;
+}
+
+
+//temporary WordPress elements
+//should be split into managable _.scss files
+
+//default WordPress class to hide stuff
+.screen-reader-text,
+.hidden {
+	@include hide-visually;
+}
+
+.by-author,
+.posted-on,
+.cat-links,
+.tags {
+ margin-right: .5rem;
+ font-size: $third;
+}
+
+.by-author:before {
+ content: 'by: ';
+}
+
+.posted-on:before {
+ content: 'Posted: ';
+}
+
+.cat-links:before {
+ content: 'Category: ';
+}
+
+.tags:before {
+	content: 'Tagged: ';
+}
+
+.post,
+.sidebar,
+.footer-sidebar,
+.related-post-wrap,
+.popular-post-wrap {
+	border: $border;
+	padding: $spacer/2;
+	margin-top: $spacer;
+	margin-bottom: $spacer;
+}
+
+.author-info {
+  width: 90%;
+  margin: $spacer/2 auto;
+  border: 1px dashed $medium-gray;
+  padding: $spacer/4 $spacer/2;
+
+  h2 {
+    font-size: $font-size;
+    margin-bottom: 0;
+  }
+
+  img {
+    margin-top: $spacer/2;
+    margin-bottom: 0;
+  }
+
+  .author-description {
+    p {
+     margin-bottom: $spacer/2;
+   }
+  }
+
+}
+
+.comment-respond {
+  text-align: center;
+}
+
+.comment-form {
+ display: flex;
+ flex-direction: column;
+ flex-wrap: nowrap;
+}
+
+.menu-title-remove {
+ font-size: .8rem;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ color: $medium-gray;
+}
+
+.footer,
+.sidebar {
+  width: 100%;
+  text-align: center;
+}
+
+//footer and social menu have '|' separator. See menu templates php
+.footer-links li,
+.social-navigation li {
+  display: inline;
+
+  .spacer {
+    margin-left: 4px;
+    margin-right: 2px;
+
+  }
+}
+//hide the last separator
+.footer-links li:last-child span,
+.social-navigation li:last-child span {
+      display: none;
+}
+
+.nav-previous,
+.nav-next {
+font-family: $alt-font;
+  font-size: $third;
+  max-width: 50%;
+}
+
+.nav-previous {
+  float: left;
+}
+
+.nav-next {
+  float: right;
+}
+
+//Change for icon font
+.social-navigation a[href*="facebook.com"]:before {
+  content: "Facebook";
+}
+
+.social-navigation a[href*="plus.google.com"]:before {
+  content: "Google+";
+}
+
+.social-navigation a[href*="github.com"]:before {
+  content: "Github";
+}
+
+.social-navigation a[href*="linkedin.com"]:before {
+  content: "LinkedIn";
+}
+
+.social-navigation a[href*="twitter.com"]:before {
+  content: "Twitter";
+}
+//if theres no sidebar (home page), shade the page background
+.no-sidebar {
+  background: #f6feff;
+}
+
+
+
+// =======================
+// min-width 900px
+// =======================
+
+@include media(900) {
+
+.post {
+  max-width: 900px;
+  @include margin(null auto);
+}
+
+.footer-sidebar1,
+.footer-sidebar2,
+.footer-sidebar3,
+.sidebar div {
+  width: 33%;
+  float: left;
+  padding: 15px;
+}
+
+.related-wrap,
+.popular-wrap {
+ text-align: center;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ align-items: flex-start;
+}
+
+.related-post,
+.popular-post {
+  width: 33%;
+  padding: 15px;
+}
+}//end media 900px
+
+
+
+
+
+
+
+
+
+

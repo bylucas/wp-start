@@ -21,7 +21,7 @@
 				?>
                 </header>
                 <!-- .page-header -->
-
+<div class="post-feed">
                 <?php
 			// Start the Loop.
 			while ( have_posts() ) : the_post();
@@ -29,9 +29,9 @@
 				get_template_part( 'post-formats/content', 'index' );
 
 			// End the loop.
-			endwhile;
-
-			start_pagination();
+			endwhile; ?>
+</div>
+		<?php	start_pagination();
 
 		// If no content, include the "No posts found" template.
 		else :

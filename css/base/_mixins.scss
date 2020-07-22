@@ -1,0 +1,207 @@
+// =============================
+// Mixins with Bourbon examples
+// =============================
+
+// @include background(value);
+// example @include background(lighten($red, 20%));
+@mixin background($background-color: $background) {
+  background: $background-color;
+  box-shadow: inset 0 0 4px darken($background-color, 7%);
+}
+
+// Hide from both screenreaders and browsers: h5bp.com/u
+// @include hidden;
+@mixin hidden {
+	display: none !important;
+	visibility: hidden;
+}
+
+// Placeholders
+// @include placeholder;
+@mixin placeholder {
+	&.placeholder {
+		@content;
+	}
+
+	&:-moz-placeholder {
+		@content;
+	}
+
+	&::-moz-placeholder {
+		@content;
+	}
+
+	&:-ms-input-placeholder {
+		@content;
+	}
+
+	&::-webkit-input-placeholder {
+		@content;
+	}
+}
+
+
+// Simple breakpoints - base styles are phone first
+// eg @include media(500)
+@mixin media($point) {
+	@if $point==900 {
+		@media only screen and (min-width: 900px) {
+			@content;
+		}
+	}
+
+	@else if $point==700 {
+		@media only screen and (min-width: 700px) {
+			@content;
+		}
+	}
+
+	@else if $point==500 {
+		@media only screen and (min-width: 500px) {
+			@content;
+		}
+	}
+
+	@else if $point==$point {
+		@media only screen and (min-width: $point + px) {
+			@content;
+		}
+	}
+}
+
+//Phone1st uses Bourbon, a light mixin library, via Codekit.
+//Bourbon mixins
+//Check for updates https://www.bourbon.io/docs/latest/
+//If you fancy using Boubon Neat a simple grid system, start here https://neat.bourbon.io/docs/latest/
+
+//Bourbon Mixins for reference
+//Border
+//@include border-color(#a60b55 #76cd9c null #e8ae1a);
+//@include border-top-radius(4px);
+//@include border-right-radius(3px);
+//@include border-bottom-radius(2px);
+//@include border-left-radius(1px);
+//@include border-style(dashed null solid);
+//@include border-width(1em null 20px);
+
+//buttons
+//#{$all-buttons} {
+//background-color: #f00;
+//}
+
+//#{$all-buttons-active} {
+// background-color: #00f;
+//}
+
+//#{$all-buttons-focus} {
+//background-color: #0f0;
+//}
+
+//#{$all-buttons-hover} {
+// background-color: #0f0;
+//}
+
+//clearfix
+//@include clearfix;
+
+//constrast switch
+//color: contrast-switch(#bae6e6);
+
+//Ellipses
+//@include ellipsis;
+
+//@fontface
+//@include font-face(
+//  "source-sans-pro",
+//  "fonts/source-sans-pro-regular",
+//  ("woff2", "woff")
+//) {
+//  font-style: normal;
+//  font-weight: 400;
+//}
+
+//font-stacks
+//font-family: $font-stack-helvetica;
+//font-family: $font-stack-lucida-grande;
+//font-family: $font-stack-verdana;
+//font-family: $font-stack-system;
+//font-family: $font-stack-garamond;
+//font-family: $font-stack-georgia;
+//font-family: $font-stack-hoefler-text;
+//font-family: $font-stack-consolas;
+//font-family: $font-stack-courier-new;
+//font-family: $font-stack-monaco;
+
+//hide text
+//@include hide-text;
+//@include hide-visually;
+//@include hide-visually("unhide");
+
+//margin
+//@include margin(null auto);
+
+//module scale
+//$bourbon: (
+//"modular-scale-ratio": 1.2,
+//);
+//.element {
+//font-size: modular-scale(3);
+//}
+
+//overflow wrap (break word)
+//@include overflow-wrap;
+
+//padding
+// @include padding(null 1rem);
+
+//position
+//@include position(relative, 0 null null 10em);
+
+//prefixer
+//to be looked at
+
+//shade
+//background-color: shade(#ffbb52, 60%);
+
+//size
+//@include size(2em);
+
+//strip unit
+//$dimension: strip-unit(10em);
+
+//text inputs
+//#{$all-text-inputs} {
+//  border: 1px solid #ccc;
+//}
+
+//#{$all-text-inputs-active} {
+// border: 1px solid #aaa;
+//}
+
+//#{$all-text-inputs-focus} {
+//  border: 1px solid #1565c0;
+//}
+
+//#{$all-text-inputs-hover} {
+// border: 1px solid #aaa;
+//}
+
+//#{$all-text-inputs-invalid} {
+// border: 1px solid #00f;
+//}
+
+//tint
+//background-color: tint(#6ecaa6, 40%);
+
+//triangle
+//.element {
+//  &::before {
+//    @include triangle("up", 2rem, 1rem, #b25c9c);
+//    content: "";
+//  }
+//}
+
+//value prefixer
+//@include value-prefixer(cursor, grab, ("webkit", "moz"));
+
+
