@@ -1,9 +1,7 @@
 <?php
-/**
- * start Customizer
- * Sets up the WordPress core custom header and custom background features.
- * A very basic customizer to alter, destroy or build-on 
- */
+/* start Customizer
+Sets up the WordPress core custom header and custom background features.
+A very basic customizer to alter, destroy or build-on  */
 
 function start_custom_header_and_background() {
 

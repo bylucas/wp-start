@@ -14,51 +14,51 @@ get_header(); ?>
 
  <article class="post">
 
-        <header class="post-not-found-header">
+    <header class="post-not-found-header">
 
-            <h1><span><?php _e( 'Oops!', 'start' ); ?></span><br>
-				<?php _e( 'That page can&rsquo;t be found', 'start' ); ?>
-			</h1>
+        <h1><span><?php _e( 'Oops!', 'start' ); ?></span><br>
+			<?php _e( 'That page can&rsquo;t be found', 'start' ); ?>
+		</h1>
 
-        </header>
+    </header>
 
-        <section class="post-not-found-body">
+    <section class="post-not-found-body">
 
-            <p>
-                <?php _e( 'Apologies, but no results were found. Perhaps another search will help or see the latest Articles below...', 'start' ); ?>
-            </p>
+        <p>
+            <?php _e( 'Apologies, but no results were found. Perhaps another search will help or see the latest Articles below...', 'start' ); ?>
+        </p>
 
-            <div class="noresults-search-box">
+        <div class="noresults-search-box">
 
-                <?php get_search_form(); ?>
+            <?php get_search_form(); ?>
 
-            </div>
+        </div>
 
-            <h3><?php _e('Check out the latest articles', 'start'); ?></h3>
+        <h3><?php _e('Check out the latest articles', 'start'); ?></h3>
 
-            <ul>
+        <ul>
 
-                <?php
-    	$recentPosts = new WP_Query();
-    	$recentPosts->query('showposts=10');?>
+        <?php
+    	    $recentPosts = new WP_Query();
+    	    $recentPosts->query('showposts=10');?>
 
-                    <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
+                <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
 
-                        <li>
+            <li>
 
-                            <a href="<?php the_permalink() ?>" rel="bookmark">
+                <a href="<?php the_permalink() ?>" rel="bookmark">
                                 <?php the_title(); ?>
-                            </a>
+                </a>
 
-                        </li>
+            </li>
 
-                        <?php endwhile; ?>
+        <?php endwhile; ?>
 
-            </ul>
+        </ul>
 
-        </section>
+    </section>
 
-    </article>
-</section><!-- .main -->
+</article>
+</section><!-- main -->
 
 <?php get_footer();

@@ -1,0 +1,32 @@
+// =============================
+// post meta
+// =============================
+
+.by-author,
+.posted-on,
+.cat-links,
+.tags,
+.comments-link {
+ margin-right: .5rem;
+ font-size: $third;
+}
+
+.by-author:before {
+ content: 'by: ';
+}
+
+.posted-on:before {
+ content: 'Posted: ';
+}
+
+.cat-links:before {
+ content: 'Category: ';
+}
+
+.tags:before {
+	content: 'Tagged: ';
+}
+
+.reading-time {
+	font-size: $third;
+}

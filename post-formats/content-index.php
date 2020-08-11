@@ -10,10 +10,8 @@
 
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <?php
-		// Post thumbnail.
-		start_post_thumbnail();
-	?>
+        <?php // Post thumbnail.
+		start_post_thumbnail(); ?>
 
             <header class="index-header">
                 <?php the_title( sprintf( '<h2><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -35,8 +33,7 @@
 
                 <p class="reading-time"><?php printf( __( 'Reading time about <span class="reading-number">%s</span>', 'start' ), start_estimated_reading_time() )?></p>
 
-                    <?php
-            edit_post_link(
+                <?php edit_post_link(
                 sprintf(
                     /* translators: %s: Name of current post */
                     __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'start' ),
@@ -44,8 +41,7 @@
                 ),
                 '<span class="edit-link">',
                 '</span>'
-            );
-        ?>
+            ); ?>
 
             </footer>
             <!-- .post-footer -->

@@ -1,0 +1,27 @@
+// =============================
+// Author info
+// =============================
+
+.author-info {
+  width: 90%;
+  margin: $spacer/2 auto;
+  border: 1px dashed $medium-gray;
+  padding: $spacer/4 $spacer/2;
+
+  h2 {
+    font-size: $font-size;
+    margin-bottom: 0;
+  }
+
+  img {
+    margin-top: $spacer/2;
+    margin-bottom: 0;
+  }
+
+  .author-description {
+    p {
+     margin-bottom: $spacer/2;
+   }
+  }
+
+}

@@ -1,0 +1,18 @@
+// =============================
+// Navigation
+// =============================
+
+.nav-previous,
+.nav-next {
+font-family: $alt-font;
+  font-size: $third;
+  max-width: 50%;
+}
+
+.nav-previous {
+  float: left;
+}
+
+.nav-next {
+  float: right;
+}

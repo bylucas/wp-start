@@ -1,12 +1,6 @@
 <?php
-/**
- * Register widget area.
- *
- * @since start 1.0
- *
- * @link https://codex.wordpress.org/Function_Reference/register_sidebar
- */
-
+//REGISTER THE WIDGET ITEMS
+//Main sidebar
 function start_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Blog Sidebar', 'start' ),
@@ -19,7 +13,6 @@ function start_widgets_init() {
 	) );
 
 	// Footer sidebars
-
 	register_sidebar( array(
 		'name' => __( 'Footer Sidebar1', 'start' ),
 		'id' => 'sidebar2',

@@ -1,0 +1,21 @@
+// =============================
+// related posts
+// =============================
+
+@include media(900) {
+.related-wrap,
+.popular-wrap {
+ text-align: center;
+ display: flex;
+ flex-direction: row;
+ flex-wrap: wrap;
+ justify-content: space-around;
+ align-items: flex-start;
+}
+
+.related-post,
+.popular-post {
+  width: 33%;
+  padding: 15px;
+}
+}

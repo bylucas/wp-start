@@ -12,10 +12,6 @@
                'container' => 'false',
                'menu_id' => 'main-menu',
                'menu_class' => 'main-menu'
-               ) );
-               ?>
-
-
-        </nav>
-        <!-- .main-navigation -->
-        <?php endif; ?>
+            ) ); ?>
+       </nav>
+   <?php endif; ?>

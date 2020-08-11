@@ -1,9 +1,7 @@
 <?php
-/***************************************
-RELATED POSTS AND POPULAR POSTS FUNCTION
-****************************************/
-
-// Related Posts Function (call using start_related_posts(); )
+//RELATED POSTS AND POPULAR POSTS FUNCTION
+//set the image size in theme-support
+//Related Posts Function (call using start_related_posts(); )
 
 function start_related_posts()  {
 

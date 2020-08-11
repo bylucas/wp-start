@@ -18,18 +18,13 @@
                 </header>
                 <!-- .post-header -->
         
+                    <section class="home-page-content">
 
-            <section class="home-page-content">
-
-    <p>Welcome to your homepage.</p>         
+                        <p>Welcome to your homepage.</p>         
            
-           	
-
- </section>
-  </article>
-   <?php endwhile; ?>          
+                    </section>
+            </article>
+    <?php endwhile; ?>          
     <?php start_popular_posts(); ?>
 
-    </section>
-
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

@@ -1,0 +1,13 @@
+// =============================
+// widget areas
+// =============================
+
+.sidebar,
+.footer-sidebar {
+  width: 100%;
+  text-align: center;
+  border: $border;
+	padding: $spacer/2;
+	margin-top: $spacer;
+	margin-bottom: $spacer;
+}

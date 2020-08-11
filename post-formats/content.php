@@ -13,8 +13,7 @@
 
         <?php
 		// Post thumbnail.
-		start_post_thumbnail();
-	?>
+		start_post_thumbnail(); ?>
 
             <header class="post-header">
                 <?php the_title( '<h1>', '</h1>' ); ?>
@@ -22,33 +21,27 @@
             <!-- .post-header -->
 
             <div class="post-content">
-                <?php
-			
-            the_content();
+                
+                <?php the_content();
 
-		 start_page_links();
-
-		?>
+		        start_page_links(); ?>
             </div>
             <!-- .post-content -->
 
-            <?php
-		// Author bio.
+            <?php // Author bio.
 		if ( is_single() && get_the_author_meta( 'description' ) ) :
 			
 			get_template_part( 'templates/author-bio' );
 
 			get_template_part( 'templates/social-menu' );
 
-		endif;
-	?>
+        endif; ?>
 
-                <footer class="post-footer">
+            <footer class="post-footer">
 
-                    <?php start_post_meta(); ?>
+                <?php start_post_meta(); ?>
 
-                        <?php
-            edit_post_link(
+                <?php edit_post_link(
                 sprintf(
                     /* translators: %s: Name of current post */
                     __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'start' ),
@@ -56,11 +49,10 @@
                 ),
                 '<span class="edit-link">',
                 '</span>'
-            );
-        ?>
+            ); ?>
 
-                </footer>
-                <!-- .entry-footer -->
+            </footer>
+            <!-- .entry-footer -->
 
     </article>
     <!-- #post-## -->

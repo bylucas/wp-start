@@ -29,14 +29,15 @@ return;
   ) );
   ?>
 
-          <?php //start_comment_nav(); ?>
-            <?php if ( ! comments_open() ) : ?>
-              <p class="no-comments">
-                <?php _e( 'Comments are closed.' , 'start' ); ?>
-              </p>
-              <?php endif; ?>
-                <?php endif; ?>
-                  <?php
+  <?php //start_comment_nav(); ?>
+    <?php if ( ! comments_open() ) : ?>
+      <p class="no-comments">
+        <?php _e( 'Comments are closed.' , 'start' ); ?>
+      </p>
+    <?php endif; ?>
+      <?php endif; ?>
+
+  <?php // remove this section to use default comment form
   $comments_args = array(
   'fields' => apply_filters(
   'comment_form_default_fields', array(
@@ -52,4 +53,4 @@ return;
   );
   comment_form($comments_args);
   ?>
-      </section>
+    </section>

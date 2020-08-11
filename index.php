@@ -10,36 +10,29 @@
  * @since start 1.0
  */
 
-get_header(); ?>
+get_header();
 
-        <?php if ( have_posts() ) : ?>
+	if ( have_posts() ) : ?>
   <!-- post-feed wraps post excepts and uses infinite scroll     -->  	
 <div class="post-feed">
-            <?php
-			// Start the loop.
-			while ( have_posts() ) : the_post();
+  
+	<?php // Start the loop.
+		while ( have_posts() ) : the_post();
 
-				// content-index shows post excerpts
-				// to show the full posts, call post-format/content.
-				get_template_part( 'post-formats/content', 'index' );
+		// content-index shows post excerpts
+		// to show the full posts, call post-format/content.
+		get_template_part( 'post-formats/content', 'index' );
 
-			// End the loop.
-			endwhile; ?>
+		// End the loop.
+		endwhile; ?>
 </div><!-- end post-feed -->
 
-<?php
-			start_pagination();
+<?php start_pagination();
 
-		// If no content, include the "No posts found" template.
+	// If no content, include the "No posts found" template.
 		else :
-			get_template_part( 'post-formats/content', 'none' );
-
-		endif;
-		?>
-
-    <?php get_sidebar(); ?>
-
-        </section>
-        <!-- end main -->
-
-        <?php get_footer(); ?>
+		get_template_part( 'post-formats/content', 'none' );
+		endif; ?>
+	
+	<?php get_sidebar(); ?>
+	<?php get_footer(); ?>

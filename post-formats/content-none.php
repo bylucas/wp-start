@@ -31,21 +31,21 @@
 
             <ul>
 
-                <?php
-    	$recentPosts = new WP_Query();
-    	$recentPosts->query('showposts=10');?>
+            <?php
+    	    $recentPosts = new WP_Query();
+    	    $recentPosts->query('showposts=10');?>
 
-                    <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
+                <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
 
-                        <li>
+                <li>
 
-                            <a href="<?php the_permalink() ?>" rel="bookmark">
-                                <?php the_title(); ?>
-                            </a>
+                    <a href="<?php the_permalink() ?>" rel="bookmark">
+                        <?php the_title(); ?>
+                    </a>
 
-                        </li>
+                </li>
 
-                        <?php endwhile; ?>
+            <?php endwhile; ?>
 
             </ul>
 

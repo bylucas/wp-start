@@ -20,15 +20,14 @@
 
                 <?php the_content(); ?>
 
-                    <?php start_page_links(); ?>
+                <?php start_page_links(); ?>
 
             </section>
             <!-- .post-content -->
 
             <footer class="page-footer">
 
-                <?php
-            edit_post_link(
+                <?php edit_post_link(
                 sprintf(
                     /* translators: %s: Name of current post */
                     __( 'Edit<span class="screen-reader-text"> "%s"</span>', 'start' ),
@@ -36,8 +35,7 @@
                 ),
                 '<span class="edit-link">',
                 '</span>'
-            );
-        ?>
+            ); ?>
 
             </footer>
 

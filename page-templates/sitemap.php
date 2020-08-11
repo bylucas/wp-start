@@ -65,7 +65,7 @@
                             <ul>
 
                                 <?php $recentPosts = new WP_Query();
-						$recentPosts->query('showposts=1000&cat=-8'); ?>
+						            $recentPosts->query('showposts=1000&cat=-8'); ?>
 
                                     <?php while ($recentPosts->have_posts()) : $recentPosts->the_post(); ?>
 
@@ -92,7 +92,4 @@
 
             <?php endwhile; ?>
 
-                    </section>
-                    <!-- end main -->
-
-                    <?php get_footer(); ?>
+    <?php get_footer(); ?>

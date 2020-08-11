@@ -1,0 +1,24 @@
+// =============================
+// footer
+// =============================
+
+//footer and social menu have '|' separator. See menu templates php
+.footer-links li,
+.social-navigation li {
+  display: inline;
+
+  .spacer {
+    margin-left: 4px;
+    margin-right: 2px;
+
+  }
+}
+//hide the last separator
+.footer-links li:last-child span,
+.social-navigation li:last-child span {
+      display: none;
+}
+
+.footer-info {
+	font-size: $third;
+}

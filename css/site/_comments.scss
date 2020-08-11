@@ -1,0 +1,48 @@
+// =============================
+// comments
+// =============================
+
+.commentlist {
+	border: $border;
+	padding: $spacer/2;
+	margin-top: $spacer;
+	margin-bottom: $spacer;
+
+	h3 {
+		text-align: center;
+		margin-bottom: $spacer/2;
+	}
+
+	p {
+		font-size: $secondary;
+	}
+}
+
+.comment-respond {
+ 
+  input,
+  textarea {
+  	width: 100%;
+  	margin-bottom: $spacer/2;
+  	padding: 15px;
+  }
+
+  p {
+  	margin-bottom: $spacer/2;
+  }
+
+  .comment-form-cookies-consent {
+  	font-size: $third;
+  }
+
+  input[type="checkbox"] {
+  	width: auto;
+  	margin: 0;
+  	margin-right: 10px;
+  }
+
+  .form-submit {
+  	width: 150px;
+  	@include margin(null auto);
+  }
+}

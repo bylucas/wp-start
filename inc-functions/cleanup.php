@@ -1,12 +1,10 @@
 <?php
-/********************************************************
-AFTER THEME SETUP - Remove un-wanted files from WordPress
-*********************************************************
-* WordPress adds some unnecessary files to the head and unnecessary.
-* @since start 1.0
-*/
- 
-function start_after_setup () {
+/* AFTER THEME SETUP - Remove un-wanted files from WordPress
+WordPress adds some unnecessary files to the head
+This is a personal opinion and may horrify some of the WordPress community
+@since start 1.0 */
+
+ function start_after_setup () {
   
     // removes the “generator” meta tag from the document header.
     remove_action('wp_head', 'wp_generator');
@@ -63,5 +61,4 @@ function start_remove_recent_comments_style() {
 }
 
 add_action('wp_head', 'start_remove_recent_comments_style', 1);
-
 }

@@ -6,24 +6,19 @@
  * @since start 1.0
  */
 
-get_header(); ?>
+get_header();
 
+	if ( have_posts() ) : ?>
 
-        <?php if ( have_posts() ) : ?>
+  	<header class="page-header">
+      <h1><?php printf( __( 'Search Results for: %s', 'start' ), get_search_query() ); ?></h1>
+    </header><!-- .page-header -->
 
-            <header class="page-header">
-                <h1><?php printf( __( 'Search Results for: %s', 'start' ), get_search_query() ); ?></h1>
-            </header>
-            <!-- .page-header -->
-
-            <?php
-			// Start the loop.
-			while ( have_posts() ) : the_post(); ?>
-
-                <?php
-				/*
-				 * Run the loop for the search to output the results.
-				 */
+<?php // Start the loop.
+		while ( have_posts() ) : the_post();
+			/*
+			 * Run the loop for the search to output the results.
+			 */
 				get_template_part( 'post-formats/content', 'search' );
 
 			// End the loop.
@@ -36,12 +31,8 @@ get_header(); ?>
 		else :
 			get_template_part( 'post-formats/content', 'none' );
 
-		endif;
-		?>
+		endif; ?>
 
     <?php get_sidebar(); ?>
-
-        </section>
-        <!-- end main -->
-
-        <?php get_footer(); ?>
+		
+		<?php get_footer(); ?>

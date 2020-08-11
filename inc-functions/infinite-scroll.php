@@ -1,9 +1,7 @@
 <?php
+//INFINITE SCROLL
 
-/**
- * Javascript for Load More
- *
- */
+//JAVASCRIPT FOR LOAD MORE
 function start_load_more_js() {
 
 	global $wp_query;
@@ -14,16 +12,12 @@ function start_load_more_js() {
 	);
 if ( is_home() | is_archive() ) {			
 	wp_enqueue_script( 'start-load-more', get_stylesheet_directory_uri() . '/js/min/load-more.js', array( 'jquery' ), '1.0', true );
-	wp_localize_script( 'start-load-more', 'startloadmore', $args );
-	
+	wp_localize_script( 'start-load-more', 'startloadmore', $args );	
 }
 }
 add_action( 'wp_enqueue_scripts', 'start_load_more_js' );
 
-/**
- * AJAX Load More 
- *
- */
+// AJAX Load More
 function start_ajax_load_more() {
 	check_ajax_referer( 'start-load-more-nonce', 'nonce' );
     

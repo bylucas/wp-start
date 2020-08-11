@@ -1,10 +1,11 @@
 <?php
-//************* COMMENT LAYOUT *********************
+// COMMENT LAYOUT
 //Alter the way the comments look, remove this file to use default
+//Cookie consent at the bottom of this page
 
 // Comments Layout
 function start_comments( $comment, $args, $depth ) {
-   $GLOBALS['comment'] = $comment; ?>
+  $GLOBALS['comment'] = $comment; ?>
 	<div id="comment-<?php comment_ID(); ?>" <?php comment_class( ''); ?>>
 		<article>
 			<header class="comment-author vcard">
@@ -39,5 +40,19 @@ edit_comment_link( __( 'Edit' ), '  ', '' );
 
 		</article>
 
-		<?php
+<?php }
+
+//COOKIE CONSENT
+//the cookie consent in the comments
+
+function start_filter_comment_fields( $fields ) {
+  $commenter = wp_get_current_commenter();
+
+  $consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
+
+  $fields['cookies'] = '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' . '<label for="wp-comment-cookies-consent">Save my name and email in this browser, I may come back.</label></p>';
+
+  return $fields;
 }
+
+add_filter( 'comment_form_default_fields', 'start_filter_comment_fields', 20 );
